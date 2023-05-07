@@ -30,9 +30,9 @@ app.get("/api/users", (request, response) => {
   response.json(users);
 });
 
-app.post("/api/users/:id/exercises", (request, response) => {
+app.post("/api/users/:_id/exercises", (request, response) => {
   let date;
-  const userId = request.params["id"];
+  const userId = request.params["_id"];
 
   if (!request.body.date) {
     date = DateTime.now().setZone("Asia/Manila");
