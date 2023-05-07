@@ -68,11 +68,7 @@ app.get("/api/users/:id/logs", (request, response) => {
   let userExerciseLogs = [];
 
   const username = getUsernameById(userId);
-
-  users.forEach((user) => {
-    console.log(user.username);
-  });
-
+  
   if (start && end && limit) {
     userExerciseLogs = getUserExerciseLogs(start, end, limit, userId);
   } else {
