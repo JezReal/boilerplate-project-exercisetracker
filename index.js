@@ -54,7 +54,7 @@ app.post("/api/users/:id/exercises", (request, response) => {
   response.json({
     username: username,
     description: request.body["description"],
-    duration: request.body["duration"],
+    duration: parseInt(request.body["duration"]),
     date: date.toFormat("ccc LLL dd y"),
     _id: request.body[":_id"],
   });
