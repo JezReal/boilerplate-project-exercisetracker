@@ -52,11 +52,11 @@ app.post("/api/users/:_id/exercises", (request, response) => {
   const username = getUsernameById(userId);
 
   response.json({
-    username: username,
-    description: request.body["description"],
-    duration: parseInt(request.body["duration"]),
-    date: date.toFormat("ccc LLL dd y"),
     _id: request.body[":_id"],
+    username: username,
+    date: date.toFormat("ccc LLL dd y"),
+    duration: parseInt(request.body["duration"]),
+    description: request.body["description"],
   });
 });
 
@@ -68,7 +68,7 @@ app.get("/api/users/:id/logs", (request, response) => {
   let userExerciseLogs = [];
 
   const username = getUsernameById(userId);
-  
+
   if (start && end && limit) {
     userExerciseLogs = getUserExerciseLogs(start, end, limit, userId);
   } else {
